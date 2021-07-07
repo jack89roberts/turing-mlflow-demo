@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS demo1_multiclass;
+CREATE TABLE demo1_multiclass (
+    "id" TEXT PRIMARY KEY,
+    "age" TEXT ,
+    "ajcc6_stage" TEXT ,
+    "ajcc7_stage" TEXT ,
+    "breast_stage" TEXT ,
+    "cod" TEXT ,
+    "cod_cancer" TEXT ,
+    "cod_other" TEXT ,
+    "cs_nodes" INTEGER ,
+    "diag_conf" TEXT ,
+    "eod_extent" INTEGER ,
+    "eod_nodes" INTEGER ,
+    "laterality" TEXT ,
+    "patient" INTEGER ,
+    "record" INTEGER ,
+    "sex" TEXT ,
+    "site" TEXT ,
+    "survival_months" INTEGER ,
+    "target" INTEGER ,
+    "tmarker1" INTEGER ,
+    "tmarker2" INTEGER ,
+    "tmarker3" INTEGER ,
+    "tumors_benign" INTEGER ,
+    "tumors_malignant" INTEGER ,
+    "year" INTEGER
+);

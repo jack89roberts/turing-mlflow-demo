@@ -1,0 +1,1 @@
+\COPY demo1_multiclass( age, cod, cod_cancer, cod_other, tmarker1, tmarker2, tmarker3, eod_nodes, eod_extent, cs_nodes, tumors_benign, sex, laterality, diag_conf, site, ajcc7_stage, ajcc6_stage, breast_stage, patient, tumors_malignant, year, survival_months, record, id, target) FROM 'demo1_multiclass_seer_1975_breastCancer.csv' WITH DELIMITER ',' CSV HEADER;
