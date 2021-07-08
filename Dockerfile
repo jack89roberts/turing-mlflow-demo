@@ -29,7 +29,7 @@ RUN rm /Miniconda3-latest-Linux-x86_64.sh
 COPY *.sql /models/
 COPY examples/ /models
 COPY start.sh /start.sh
-# COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 ENV MLFLOW_TRACKING_URI='sqlite:////models/mlruns.db'
 WORKDIR /models
 RUN cat demo1_multiclass_create.sql | sqlite3 mlruns.db
