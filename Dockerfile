@@ -22,7 +22,8 @@ RUN apt-get -qq update && apt-get -qq -y install gnupg curl wget bzip2 git gcc v
 	&& apt-get autoclean \
 	&& rm -rf /var/lib/apt/lists/* /var/log/dpkg.log \
 	&& conda clean --all --yes
-RUN pip install mlflow[extras]
+RUN pip install mlflow[extras]==1.13.1
+RUN pip install whylogs==0.4.9
 RUN pip install jupyter jupyter-core notebook
 RUN mkdir /models
 RUN rm /Miniconda3-latest-Linux-x86_64.sh
