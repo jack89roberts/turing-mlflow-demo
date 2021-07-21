@@ -36,7 +36,7 @@ ENV MLFLOW_TRACKING_URI='http://0.0.0.0:5000'
 WORKDIR /models
 RUN cat demo1_multiclass_create.sql | sqlite3 mlruns.db
 EXPOSE 5000
-EXPOSE 1234
+EXPOSE 1230-1240
 EXPOSE 8080
 # CMD tail -f /dev/null
 # CMD mlflow ui --backend-store-uri 'sqlite:////models/mlruns.db' -h 0.0.0.0 ; jupyter notebook --port=8080 --no-browser --ip=0.0.0.0 --allow-root
