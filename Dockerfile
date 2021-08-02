@@ -22,16 +22,19 @@ RUN apt-get -qq update && apt-get -qq -y install gnupg curl wget bzip2 git gcc v
 	&& apt-get autoclean \
 	&& rm -rf /var/lib/apt/lists/* /var/log/dpkg.log \
 	&& conda clean --all --yes
+RUN rm /Miniconda3-latest-Linux-x86_64.sh
+
+## Download and install Python packages
 RUN pip install mlflow[extras]==1.13.1
 RUN pip install whylogs==0.4.9
 RUN pip install jupyter jupyter-core notebook
+
+
 RUN mkdir /models
-RUN rm /Miniconda3-latest-Linux-x86_64.sh
 COPY *.sql /models/
 COPY examples/ /models
 COPY start.sh /start.sh
 COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
-# ENV MLFLOW_TRACKING_URI='sqlite:////models/mlruns.db'
 ENV MLFLOW_TRACKING_URI='http://0.0.0.0:5000'
 WORKDIR /models
 RUN cat demo1_multiclass_create.sql | sqlite3 mlruns.db
@@ -39,5 +42,4 @@ EXPOSE 5000
 EXPOSE 1230-1240
 EXPOSE 8080
 # CMD tail -f /dev/null
-# CMD mlflow ui --backend-store-uri 'sqlite:////models/mlruns.db' -h 0.0.0.0 ; jupyter notebook --port=8080 --no-browser --ip=0.0.0.0 --allow-root
 CMD ["/bin/bash", "/start.sh"]
