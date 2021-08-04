@@ -8,4 +8,4 @@
 1. Unless the ports were changed in step 2 the following ports will be exposed:
     - 5000 : MLFlow
 	 - 8080 : Jupyter Notebook
-1. Port 1234 is available and exposed to serve a model when required
+1. Port 1230 to 1240 are available and exposed to serve models when required
