@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="jannetta.steyn@newcastle.ac.uk"
 ENV TZ=Europe/London
@@ -7,9 +7,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y apt-utils
-# RUN apt-get install -y jupyter jupyter-core jupyter-notebook
-# RUN apt-get -y install vim python3.6 python3.6-dev python3-pip wget git apt-transport-https software-properties-common zip unzip libpaper-utils xdg-utils liblas3 libcairo2 libcurl4 libjpeg8 liblapack3 libpango-1.0-0 libpangocairo-1.0-0 libpng16-16 libtiff5 libtk8.6 libxt6 gfortran libblas-dev libatlas-base-dev liblapack-dev libatlas-base-dev libncurses5-dev libreadline-dev libjpeg-dev libpcre3-dev libpng-dev zlib1g-dev libbz2-dev liblzma-dev libicu-dev pkg-config r-base-core r-base-dev jupyter jupyter-core jupyter-notebook
-RUN apt-get install -y git python3 python3-pip wget
+RUN apt-get install -y git python3.8 python3-pip wget
 ENV PATH $PATH:/usr/local/conda/bin
 
 ## Download and install required Linux packages
