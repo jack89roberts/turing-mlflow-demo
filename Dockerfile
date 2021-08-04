@@ -33,6 +33,7 @@ COPY *.sql /models/
 COPY examples/ /models
 COPY start.sh /start.sh
 COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+COPY notebooks/ /models/notebooks
 ENV MLFLOW_TRACKING_URI='http://0.0.0.0:5000'
 WORKDIR /models
 RUN cat demo1_multiclass_create.sql | sqlite3 mlruns.db
